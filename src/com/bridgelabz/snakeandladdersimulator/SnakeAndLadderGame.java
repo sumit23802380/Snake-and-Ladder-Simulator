@@ -144,6 +144,8 @@ public class SnakeAndLadderGame {
             else if(ladders.containsKey(newPosition)){
                 System.out.println("Now player got the ladder at position : " + newPosition);
                 newPosition = setPosition(ladders.get(newPosition));
+                System.out.println("Player will get play again chance ");
+                play();
             }
             System.out.println("Player gets the position : " + setPosition(newPosition));
         }
