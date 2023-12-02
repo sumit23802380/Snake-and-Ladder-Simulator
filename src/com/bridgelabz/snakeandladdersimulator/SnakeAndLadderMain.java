@@ -8,6 +8,8 @@ public class SnakeAndLadderMain {
         System.out.println("Welcome to snake and ladder game");
         SnakeAndLadderGame player1 = new SnakeAndLadderGame();
         System.out.println("Player  is at position : " + player1.getPosition());
-        player1.play();
+        while (player1.getPosition() < 100){
+            player1.play();
+        }
     }
 }

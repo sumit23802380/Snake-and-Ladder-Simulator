@@ -41,13 +41,13 @@ public class SnakeAndLadderGame {
         return random.nextInt(6)+1;
     }
     /**
-     * @desc: Method to get the Random number between 1 and 100 on board
+     * @desc: Method to get the Random number between 1 and 99 on board
      * @params :
      * @return : integer random number between 1 and 100
      */
     private int getRandomNumberOnBoard(){
         Random random = new Random();
-        return random.nextInt(100)+1;
+        return random.nextInt(100);
     }
     /**
      * @desc: method to initialize board with snakes and ladder randomly 5
@@ -56,7 +56,7 @@ public class SnakeAndLadderGame {
      */
     private void initializeBoardWithSnakesAndLadders(){
         //add 5 snakes
-        for(int i=1;i<=5;i++){
+        for(int i=1;i<=3;i++){
             int point1 = getRandomNumberOnBoard();
             int point2 = getRandomNumberOnBoard();
             if(point1 == point2){
@@ -119,6 +119,15 @@ public class SnakeAndLadderGame {
             System.out.println("Player  rolls the die and got : " + dieRoll);
             int currentPosition = getPosition();
             int newPosition = currentPosition+dieRoll;
+            if(newPosition>100){
+                System.out.println("Player Can not play it is exceeding 100");
+                return;
+            }
+            else if (newPosition == 100){
+                System.out.println("Player Reached 100");
+                setPosition(newPosition);
+                return;
+            }
             if(snakes.containsKey(newPosition)){
                 System.out.println("Now player got the snake at position : " + newPosition);
                 newPosition = setPosition(snakes.get(newPosition));
