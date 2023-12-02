@@ -1,5 +1,7 @@
 package com.bridgelabz.snakeandladdersimulator;
 
+import java.util.Random;
+
 /**
  * @desc: Snake and Ladder Game Class
  */
@@ -20,5 +22,15 @@ public class SnakeAndLadderGame {
      */
     public int getPosition(){
         return this.position;
+    }
+
+    /**
+     * @desc: Method to roll the die
+     * @params :
+     * @return : value that die gets between 1 and 6
+     */
+    public int rollDie(){
+        Random random = new Random();
+        return random.nextInt(6)+1;
     }
 }
