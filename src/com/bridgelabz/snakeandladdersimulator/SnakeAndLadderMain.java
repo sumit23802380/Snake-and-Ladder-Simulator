@@ -11,5 +11,6 @@ public class SnakeAndLadderMain {
         while (player1.getPosition() < 100){
             player1.play();
         }
+        System.out.println("Number of time the die is rolled is : " + player1.getNumberOfTimesDieRolled());
     }
 }

@@ -9,7 +9,7 @@ public class SnakeAndLadderGame {
     private int position;
     private HashMap<Integer,Integer> snakes;
     private HashMap<Integer,Integer> ladders;
-
+    private int numberOfTimesDieRolled;
 
 
     /**
@@ -19,6 +19,7 @@ public class SnakeAndLadderGame {
         this.position = 0;
         this.snakes = new HashMap<>();
         this.ladders = new HashMap<>();
+        this.numberOfTimesDieRolled = 0;
         initializeBoardWithSnakesAndLadders();
     }
 
@@ -30,13 +31,21 @@ public class SnakeAndLadderGame {
     public int getPosition(){
         return this.position;
     }
-
+    /**
+     * @desc : get the number of times the die is rolled
+     * @params :
+     * @return : number of time the die rolled
+     */
+    public int getNumberOfTimesDieRolled(){
+        return this.numberOfTimesDieRolled;
+    }
     /**
      * @desc: Method to roll the die
      * @params :
      * @return : value that die gets between 1 and 6
      */
     public int rollDie(){
+        this.numberOfTimesDieRolled++;
         Random random = new Random();
         return random.nextInt(6)+1;
     }
