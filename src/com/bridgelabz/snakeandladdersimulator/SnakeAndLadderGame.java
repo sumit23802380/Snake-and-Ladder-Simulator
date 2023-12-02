@@ -124,7 +124,7 @@ public class SnakeAndLadderGame {
                 return;
             }
             else if (newPosition == 100){
-                System.out.println("Player Reached 100");
+                System.out.println("Player Reached Exact : 100");
                 setPosition(newPosition);
                 return;
             }
